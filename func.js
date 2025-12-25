@@ -18,11 +18,15 @@
         });
 
         // Read More Toggle Function
-        function toggleText(id, btn) {
-            const el = document.getElementById(id);
-            el.classList.toggle("expanded");
-            btn.innerText = el.classList.contains("expanded") ? "View Less" : "View More";
-        }
+     function toggleText(id, btn) {
+    // Only allow toggle on mobile devices
+    if (window.innerWidth > 768) return;
+
+    const el = document.getElementById(id);
+    el.classList.toggle("expanded");
+    btn.innerText = el.classList.contains("expanded") ? "View Less" : "View More";
+}
+
 
         // Close mobile menu when clicking outside
         document.addEventListener('click', function(event) {
@@ -32,4 +36,5 @@
                 mobileMenu.classList.remove('active');
             }
         });
+
 
