@@ -1,4 +1,16 @@
 
+      /* ===== DESKTOP: SHOW FULL TEXT ALWAYS ===== */
+@media (min-width: 769px) {
+    .mobile-collapse {
+        display: block !important;
+        -webkit-line-clamp: unset !important;
+        overflow: visible !important;
+    }
+
+    .read-more-btn {
+        display: none !important;
+    }
+}
         /* ==========================================================================
            CSS CUSTOM PROPERTIES
            ========================================================================== */
@@ -665,4 +677,5 @@
             .hero-actions a { padding: 14px 20px; font-size: 0.95rem; }
             .trust-item { min-width: 220px; padding: 12px 20px; font-size: 0.9rem; }
         }
+
    
