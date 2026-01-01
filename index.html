@@ -51,8 +51,8 @@
     <header>
         <div class="nav-container">
             <a href="#" class="logo">
-                <img src="image/logo-round.png" alt="Akela Poultry Logo" />
-                AKELA <span>POULTRY</span>
+                <img src="image/logo.png" alt="Akela Poultry Logo" />
+             <!-- <span>POULTRY</span>-->
             </a>
             <nav class="desktop-nav">
                 <a href="#about">About</a>
@@ -90,15 +90,15 @@
     <!-- HERO SECTION -->
     <section class="hero">
         <div class="hero-content">
-            <img src="image/logo-round.png" class="hero-logo" alt="Akela Poultry" />
+           <!--  <img src="image/logof.png" class="hero-logo" alt="Akela Poultry" />-->
             <span class="hero-badge">Integrated Broiler Contract Farming</span>
             <h1>Empowering Farmers. Delivering Profitable Poultry Farming.</h1>
             <p>We provide <b>chicks, feed, medicines & expert care</b>.<br>You provide the shed. <b>We ensure stable
                     income.</b></p>
-            <div class="hero-actions">
-                <a href="#contact" class="btn-primary">Become a Partner Farmer</a>
-                <a href="#about" class="btn-outline">How It Works</a>
-            </div>
+            <div class="hero-actions single-cta">
+    <a href="#contact" class="btn-primary">Become a Partner Farmer</a>
+</div>
+
             <div class="hero-trust">
                 <div class="trust-item"><i class="fas fa-check-circle"></i>100% Input Support</div>
                 <div class="trust-item"><i class="fas fa-check-circle"></i>No Market Risk</div>
@@ -181,16 +181,45 @@
 
     <!-- PROCESS -->
     <section id="process">
-        <div class="container">
-            <h2 class="title">Our Working Process</h2>
-            <div class="metrics-grid">
-                <div class="metric"><strong>01</strong>Assessment & Planning</div>
-                <div class="metric"><strong>02</strong>Quality Feed & Chicks</div>
-                <div class="metric"><strong>03</strong>Technical Monitoring</div>
-                <div class="metric"><strong>04</strong>Growth & Market Success</div>
+    <div class="container">
+        <h2 class="title">Our Working Process</h2>
+
+        <div class="process-grid metrics-grid">
+            <div class="metric">
+                <div class="process-icon"><i class="fas fa-clipboard-check"></i></div>
+                <strong>01</strong>
+                <p>Assessment & Planning</p>
+            </div>
+
+            <div class="metric">
+                <div class="process-icon"><i class="fas fa-drumstick-bite"></i></div>
+                <strong>02</strong>
+                <p>Quality Feed & Chicks</p>
+            </div>
+
+            <div class="metric">
+                <div class="process-icon"><i class="fas fa-stethoscope"></i></div>
+                <strong>03</strong>
+                <p>Technical Monitoring</p>
+            </div>
+
+            <div class="metric">
+                <div class="process-icon"><i class="fas fa-chart-line"></i></div>
+                <strong>04</strong>
+                <p>Growth & Market Success</p>
             </div>
         </div>
-    </section>
+
+        <!-- Swipe Hint + Dots -->
+        <div class="swipe-indicator">← Swipe →</div>
+        <div class="pagination-dots process-dots"></div>
+    </div>
+</section>
+<div class="process-progress">
+    <div class="progress-bar">
+        <span class="progress-fill"></span>
+    </div>
+</div>
 
     <!-- GALLERY SECTION -->
     <section id="gallery">
@@ -202,6 +231,9 @@
                 <img src="image/farm-and-operation-3.jpg" alt="Farm 3" />
                 <img src="image/farm-and-operation-4.jpg" alt="Farm 4" />
             </div>
+      
+<div class="pagination-dots gallery-dots"></div>
+
         </div>
     </section>
 
@@ -274,6 +306,8 @@
     <!-- REVIEWS SECTION -->
     <section id="reviews" class="reviews">
         <div class="container">
+            <div class="swipe-indicator">← Swipe →</div>
+<div class="pagination-dots reviews-dots"></div>
             <h2 class="title">What Farmers Say</h2>
             <p
                 style="text-align: center; font-size: 1.2rem; color: var(--text-muted); max-width: 800px; margin: auto; margin-bottom: 50px;">
@@ -348,6 +382,8 @@
         </div>
         </div>
     </section>
+<div class="swipe-indicator">← Swipe →</div>
+<div class="pagination-dots reviews-dots"></div>
 
     <!-- CONTACT SECTION -->
     <section id="contact" class="contact-premium">
