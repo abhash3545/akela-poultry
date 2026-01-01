@@ -290,22 +290,38 @@ nav a:hover::after {
            ========================================================================== */
 .hero {
     min-height: 100vh;
-    display: grid;
-    place-items: center;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
     text-align: center;
     position: relative;
-    padding: 100px 20px 60px;
+    
+    /* Pushes the entire content section down to avoid the fixed nav bar */
+    padding: 140px 20px 80px; 
+    
     color: #fff;
-    background: linear-gradient(rgba(20, 83, 45, 0.9), rgba(21, 128, 61, 0.85)),
-        url("image/hero.png") center/cover no-repeat fixed;
+    /* Removed 'fixed' to fix desktop visibility and ensured the image is centered */
+    background: linear-gradient(rgba(20, 83, 45, 0.75), rgba(21, 128, 61, 0.7)),
+        url("image/hero.png") center center / cover no-repeat;
 }
 
 .hero-content {
     max-width: 900px;
     position: relative;
     z-index: 2;
+    /* Added margin to specifically push the badge and text further down */
+    margin-top: 20px; 
 }
-
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 110px; 
+        /* Standard scroll behavior ensures background image shows on all mobile browsers */
+        background-attachment: scroll; 
+    }
+    .hero-content {
+        margin-top: 10px;
+    }
+}
 .hero-logo {
     height: 220px;
     margin: 0 auto 30px;
@@ -1325,5 +1341,225 @@ footer {
         min-width: 220px;
         padding: 12px 20px;
         font-size: 0.9rem;
+    }
+}
+
+
+
+
+
+/* =========================================
+   MOBILE SWIPE – GALLERY & REVIEWS
+   ========================================= */
+@media (max-width: 768px) {
+
+  /* ---------- FARMS & OPERATIONS ---------- */
+  .gallery-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 10px;
+  }
+
+  .gallery-grid img {
+    flex: 0 0 85%;
+    scroll-snap-align: center;
+    border-radius: 16px;
+  }
+
+  .gallery-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* ---------- REVIEWS ---------- */
+  .reviews-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 15px;
+  }
+
+  .review-card {
+    flex: 0 0 90%;
+    scroll-snap-align: center;
+  }
+
+  .reviews-grid::-webkit-scrollbar {
+    display: none;
+  }
+}
+/* =========================================
+   SWIPE INDICATOR + PAGINATION
+   ========================================= */
+@media (max-width: 768px) {
+
+  .swipe-indicator {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-top: 10px;
+    animation: swipeHint 1.5s infinite;
+  }
+
+  @keyframes swipeHint {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+  }
+
+  .pagination-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .pagination-dots span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ccc;
+    transition: all 0.3s ease;
+  }
+
+  .pagination-dots span.active {
+    background: var(--primary);
+    width: 18px;
+    border-radius: 20px;
+  }
+}
+/* =========================================
+   HERO UX REFINEMENT
+   ========================================= */
+
+.hero h1 {
+    margin-bottom: 25px;
+}
+
+.hero-actions.single-cta {
+    margin-bottom: 70px; /* pushes features down */
+}
+
+.hero-trust {
+    margin-top: 0;
+}
+@media (max-width: 768px) {
+    .hero-actions.single-cta {
+        margin-bottom: 55px;
+    }
+
+    .btn-primary {
+        width: 100%;
+        max-width: 320px;
+    }
+}
+/* =========================================
+   MOBILE SWIPE – PROCESS
+   ========================================= */
+@media (max-width: 768px) {
+
+  .process-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 15px;
+  }
+
+  .process-grid .metric {
+    flex: 0 0 85%;
+    scroll-snap-align: center;
+  }
+
+  .process-grid::-webkit-scrollbar {
+    display: none;
+  }
+}
+/* =========================================
+   PROCESS ICONS + MOBILE SWIPE
+   ========================================= */
+
+.process-icon {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 18px;
+    background: var(--gradient-primary);
+    color: #fff;
+    border-radius: 18px;
+    display: grid;
+    place-items: center;
+    font-size: 28px;
+    box-shadow: 0 12px 35px rgba(22, 163, 74, 0.4);
+}
+
+/* ---------- MOBILE SWIPE ---------- */
+@media (max-width: 768px) {
+
+  .process-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 15px;
+  }
+
+  .process-grid .metric {
+    flex: 0 0 85%;
+    scroll-snap-align: center;
+  }
+
+  .process-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .process-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 26px;
+  }
+}
+/* =========================================
+   PROCESS PROGRESS BAR
+   ========================================= */
+
+.process-progress {
+    max-width: 300px;
+    margin: 18px auto 0;
+    text-align: center;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #e5e7eb;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    display: block;
+    height: 100%;
+    width: 25%;
+    background: var(--gradient-primary);
+    border-radius: 20px;
+    transition: width 0.4s ease;
+}
+
+.progress-text {
+    margin-top: 8px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+/* Hide on desktop */
+@media (min-width: 769px) {
+    .process-progress {
+        display: none;
     }
 }
